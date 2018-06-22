@@ -857,4 +857,85 @@ print(df[df.isnull().any(axis=1)][null_columns].head())
 3  NaN  NaN   NaN  
 5  NaN  NaN   NaN 
 
+#only City column null and other columns associated with it
+null_columns=df.columns[df.isnull().any()]
+print(df[df["Address"].isnull()][null_columns])
+
+         From_Date From_Time To_Date To_Time IBRS  Beat Address City Rep_Dist  \
+917            NaN       NaN     NaN     NaN  120   NaN     NaN  NaN      NaN   
+3609    03/06/2017     11:20     NaN     NaN  13B   NaN     NaN  NaN      NaN   
+9767           NaN       NaN     NaN     NaN  23F   NaN     NaN  NaN      NaN   
+16190          NaN       NaN     NaN     NaN  240   NaN     NaN  NaN      NaN   
+20597          NaN       NaN     NaN     NaN  280   NaN     NaN  NaN      NaN   
+20747          NaN       NaN     NaN     NaN  26F   NaN     NaN  NaN      NaN   
+23573          NaN       NaN     NaN     NaN  120   NaN     NaN  NaN      NaN   
+35386          NaN       NaN     NaN     NaN  280   NaN     NaN  NaN      NaN   
+44632   03/06/2017     11:20     NaN     NaN  520   NaN     NaN  NaN      NaN   
+47828          NaN       NaN     NaN     NaN  NaN   NaN     NaN  NaN      NaN   
+47838   03/06/2017     11:20     NaN     NaN  520   NaN     NaN  NaN      NaN   
+49584          NaN       NaN     NaN     NaN  11A   NaN     NaN  NaN      NaN   
+51049   03/06/2017     11:20     NaN     NaN  13B   NaN     NaN  NaN      NaN   
+64814   02/07/2017     09:00     NaN     NaN  520   NaN     NaN  NaN      NaN   
+69347          NaN       NaN     NaN     NaN  120   NaN     NaN  NaN      NaN   
+76031   02/07/2017     09:00     NaN     NaN  520   NaN     NaN  NaN      NaN   
+79903          NaN       NaN     NaN     NaN  NaN   NaN     NaN  NaN      NaN   
+85418          NaN       NaN     NaN     NaN  23F   NaN     NaN  NaN      NaN   
+104691         NaN       NaN     NaN     NaN  90Z   NaN     NaN  NaN      NaN   
+112200         NaN       NaN     NaN     NaN  90Z   NaN     NaN  NaN      NaN   
+112648         NaN       NaN     NaN     NaN  26F   NaN     NaN  NaN      NaN   
+115510         NaN       NaN     NaN     NaN  11A   NaN     NaN  NaN      NaN   
+118008         NaN       NaN     NaN     NaN  240   NaN     NaN  NaN      NaN   
+128609         NaN       NaN     NaN     NaN  120   NaN     NaN  NaN      NaN   
+
+       Area Race  Sex   Age  
+917     NaN  NaN  NaN   NaN  
+3609    NaN    B    F  23.0  
+9767    NaN    W    M  46.0  
+16190   NaN    B    F  53.0  
+20597   NaN    W    M  21.0  
+20747   NaN    B    F  36.0  
+23573   NaN    B    F  48.0  
+35386   NaN    U    U   NaN  
+44632   NaN    B    M  52.0  
+47828   NaN    W    F  41.0  
+47838   NaN    B    F  23.0  
+49584   NaN    B    F  21.0  
+51049   NaN    B    M  52.0  
+64814   NaN  NaN  NaN   NaN  
+69347   NaN    W    M  54.0  
+76031   NaN    W    M  28.0  
+79903   NaN    U    U   NaN  
+85418   NaN    U    U   NaN  
+104691  NaN    U    U   NaN  
+112200  NaN    U    U   NaN  
+112648  NaN    B    F  35.0  
+115510  NaN    B    M  52.0  
+118008  NaN    B    M  53.0  
+128609  NaN    B    M  56.0  
+
+After assessing the output it seems that these 24 removed can be dropped
+
+
 ----------------------------------------------------under work---------------------------------------------
+
+#1 - Find and Replace
+#2 - Label Encoding
+#3 - One Hot Encoding
+#4 - Custom Binary Encoding
+
+obj_df = df.select_dtypes(include=['object']).copy()
+obj_df.head()
+
+null_columns=obj_df.columns[obj_df.isnull().any()]
+obj_df[null_columns].isnull().sum()
+
+obj_df["Address"].dropna()
+
+null_columns=obj_df.columns[obj_df.isnull().any()]
+obj_df[null_columns].isnull().sum()
+#1 - Find and Replace
+
+
+
+
+
