@@ -929,10 +929,12 @@ obj_df.head()
 null_columns=obj_df.columns[obj_df.isnull().any()]
 obj_df[null_columns].isnull().sum()
 
-obj_df["Address"].dropna()
+obj_df["Address"].isnull().count()
 
 null_columns=obj_df.columns[obj_df.isnull().any()]
 obj_df[null_columns].isnull().sum()
+
+print(obj_df[obj_df["Address"].isnull()][null_columns])
 #1 - Find and Replace
 
 
