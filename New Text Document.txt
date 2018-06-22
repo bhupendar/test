@@ -1,0 +1,11 @@
+http://www.statsmodels.org/devel/examples/index.html#regression
+
+https://github.com/scikit-learn-contrib
+
+http://pbpython.com/categorical-encoding.html
+
+https://www.datacamp.com/community/tutorials/categorical-data
+
+https://medium.com/data-design/visiting-categorical-features-and-encoding-in-decision-trees-53400fa65931
+
+https://www.shanelynn.ie/using-pandas-dataframe-creating-editing-viewing-data-in-python/
