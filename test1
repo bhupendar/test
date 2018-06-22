@@ -850,10 +850,7 @@ print(df[df.isnull().any(axis=1)][null_columns].head())
 3  NaN  NaN   NaN  
 5  NaN  NaN   NaN 
 
-#count unique in columns
-dataset = pd.read_csv('KCPD_Crime_Data_2017.csv')
-unique_columns=df.columns[df.any().unique()]
-df[unique_columns].unique().sum()
+----------------------------------------------------under work---------------------------------------------
 
 pd.unique(df)
 AR = df['City'].unique()
